@@ -19,6 +19,86 @@ body {
   --section-background: #ececec;
 }
 
+.main-title {
+  width: fit-content;
+  font-size: 25px;
+  font-weight: 700;
+  border: black solid 2px;
+  padding: 10px 20px;
+  margin: 80px auto;
+  position: relative;
+  transition: var(--main-transition);
+}
+
+.main-title:hover {
+  border: rgb(255, 255, 255) solid 2px;
+  color: white;
+  transition-delay: 0.5s;
+}
+
+.main-title::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--main-color);
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.main-title::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--main-color);
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.main-title:hover::before {
+  animation: left- 0.5s forwards linear;
+}
+
+.main-title:hover::after {
+  animation: right- 0.5s forwards linear;
+}
+
+@keyframes right- {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  100% {
+    right: 0;
+    width: 50.5%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+
+@keyframes left- {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  100% {
+    left: 0;
+    width: 50.5%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
 /* =========================================Header START================================================= */
 
 header {
@@ -261,8 +341,8 @@ header nav .li-h2 .more .more-lists .list .child a span {
     font-weight: 400;
   }
   header nav .li-h2 .more .more-lists {
-    width: 500px;
-    height: 400px;
+    width: 400px;
+    height: 550px;
     right: 0px;
     top: 100px;
   }
@@ -270,6 +350,11 @@ header nav .li-h2 .more .more-lists .list .child a span {
     display: none;
   }
   header nav .li-h2 .more .more-lists .list {
+    width: 100%;
+    margin-right: 0;
+    flex-direction: column;
+  }
+  header nav .li-h2 .more .more-lists .list .child {
     width: 100%;
     margin-right: 0;
   }
@@ -340,6 +425,39 @@ header nav .li-h2 .more .more-lists .list .child a span {
   transform: rotate(-5deg) translateY(-250px) scale(1.5);
 }
 
+.landing i {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  color: var(--main-color);
+  font-size: 30px;
+  animation-name: down;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(0) translateX(-50%);
+  }
+  10% {
+    transform: translateY(-20px) translateX(-50%);
+  }
+  20% {
+    transform: translateY(0) translateX(-50%);
+  }
+  30% {
+    transform: translateY(-20px) translateX(-50%);
+  }
+  40% {
+    transform: translateY(0) translateX(-50%);
+  }
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
 .landing span {
   width: 500px;
   height: 400px;
@@ -377,13 +495,13 @@ header nav .li-h2 .more .more-lists .list .child a span {
 
 @keyframes landin-img {
   0% {
-    transform: translateY(0);
+    transform: translateY(-25px);
   }
   50% {
     transform: translateY(-50px);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(-25px);
   }
 }
 
