@@ -4,9 +4,6 @@
   margin: 0;
   font-family: "Cairo", sans-serif;
   font-family: "Work Sans", sans-serif;
-}
-
-body {
   scroll-behavior: smooth;
 }
 
@@ -25,7 +22,7 @@ body {
   font-weight: 700;
   border: black solid 2px;
   padding: 10px 20px;
-  margin: 80px auto;
+  margin: 0 auto 80px;
   position: relative;
   transition: var(--main-transition);
 }
@@ -99,6 +96,7 @@ body {
     border-radius: 0;
   }
 }
+
 /* =========================================Header START================================================= */
 
 header {
@@ -581,3 +579,94 @@ header nav .li-h2 .more .more-lists .list .child a span {
 }
 
 /* =========================================Landing END================================================= */
+/* =========================================ARTICLES START================================================= */
+
+.articles {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.articles .dad {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+  padding: 50px;
+}
+
+.articles .dad .child {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+  transition: var(--main-transition);
+}
+
+.articles .dad .child:hover {
+  transform: translateY(-20px);
+}
+
+.articles .dad .child img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.articles .dad .child .up {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+}
+.articles .dad .child .up h2 {
+  font-size: 20px;
+  font-weight: 550;
+  margin-bottom: 10px;
+}
+
+.articles .dad .child .up p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #696969;
+  line-height: 25px;
+}
+
+.articles .dad .child .down {
+  width: 100%;
+  padding: 20px 10px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration-line: none;
+  color: var(--main-color);
+  border-top: solid 1px rgb(202, 202, 202);
+}
+
+.articles .dad .child i {
+  margin-right: 10px;
+}
+
+.articles .dad .child:hover i {
+  animation-name: right-1;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes right-1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+/* =========================================ARTICLES END================================================= */
