@@ -25,6 +25,7 @@
   margin: 0 auto 80px;
   position: relative;
   transition: var(--main-transition);
+  text-transform: uppercase;
 }
 
 .main-title:hover {
@@ -405,10 +406,11 @@ header nav .li-h2 .more .more-lists .list .child a span {
   width: 100%;
   height: calc(100vh - 75px);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   overflow: hidden;
+  padding: 100px;
 }
 
 .landing::before {
@@ -597,7 +599,7 @@ header nav .li-h2 .more .more-lists .list .child a span {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
-  padding: 50px;
+  padding: 50px 100px 100px;
 }
 
 .articles .dad .child {
@@ -675,7 +677,7 @@ header nav .li-h2 .more .more-lists .list .child a span {
 .gallery {
   width: 100%;
   height: auto;
-  padding: 100px 50px 50px;
+  padding: 100px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -747,74 +749,357 @@ header nav .li-h2 .more .more-lists .list .child a span {
 
 /* =========================================Gallery END================================================= */
 /* =========================================Features START================================================= */
-/* 
+
 .features {
-  width: 100%;
-  padding: 100px 50px 50px;
+  padding: 100px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .features .dad {
-  display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 100px;
 }
 
 .features .dad .child {
-  height: 300px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border: solid 1px #ccc;
+}
+
+.features .dad .child .img {
+  width: 100%;
   position: relative;
 }
 
-.features .dad .child::after {
+.features .dad .child .img::after {
   content: "";
   position: absolute;
+  width: 100%;
+  height: 100%;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 415px;
-  background-color: rgb(255 0 0 / 50%);
-  z-index: 1;
+  background: rgba(255, 0, 0, 0.4);
+}
+
+.features .dad .child .img::before {
+  content: "";
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 125px 0px 225px 350px;
+  border-color: transparent transparent white transparent;
+  height: 0;
+  width: 0;
+  transition: var(--main-transition);
+  z-index: 2;
+}
+
+.features .dad .child:hover .img::before {
+  border-width: 125px 350px 225px 0px;
+}
+
+.features .dad .child .img img {
+  max-width: 100%;
 }
 
 .features .dad .child span {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  text-align: center;
-  padding: 0 50px;
+  justify-content: space-between;
+  padding: 25px;
+  gap: 30px;
 }
 
 .features .dad .child span h2 {
-  padding: 10px 0px;
-  font-size: 50px;
-  /* margin-top: -50px; */
+  font-size: 40px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
 }
 
-.features .dad .child span hr {
-  border: red solid 2.5px;
-  width: 100px;
-  background-color: red;
-  /* margin-top: -30px; */
-  /* margin: 0 0 25px 0; */
+.features .dad .child span h2 hr {
+  width: 75%;
+  border: solid 3px #f44036;
 }
 
 .features .dad .child span p {
-  line-height: 40px;
-  color: #696969;
+  text-align: center;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 40px;
+  color: rgb(119, 119, 119);
 }
 
-.features .dad .child img {
-  max-width: 100%;
+.features .dad .child span a {
+  text-decoration-line: none;
+  text-transform: capitalize;
+  font-size: 25px;
+  font-weight: 700;
+  color: #f44036;
+  border: solid #f44036 3px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  transition: var(--main-transition);
   position: relative;
+}
+
+.features .dad .child span a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #f44036;
+  transition: var(--main-transition);
   z-index: -1;
-} */
+}
+
+.features .dad .child:hover a::before {
+  width: 100%;
+}
+
+.features .dad .child:hover a {
+  color: white;
+}
+
+.features .dad .child-two {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border: solid 1px #ccc;
+}
+
+.features .dad .child-two .img {
+  width: 100%;
+  position: relative;
+}
+
+.features .dad .child-two .img::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgb(0 150 136 / 60%);
+}
+
+.features .dad .child-two .img::before {
+  content: "";
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 125px 0px 225px 350px;
+  border-color: transparent transparent white transparent;
+  height: 0;
+  width: 0;
+  transition: var(--main-transition);
+  z-index: 2;
+}
+
+.features .dad .child-two:hover .img::before {
+  border-width: 125px 350px 225px 0px;
+}
+
+.features .dad .child-two .img img {
+  max-width: 100%;
+}
+
+.features .dad .child-two span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  gap: 30px;
+}
+
+.features .dad .child-two span h2 {
+  font-size: 40px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.features .dad .child-two span h2 hr {
+  width: 75%;
+  border: solid 3px #009688;
+}
+
+.features .dad .child-two span p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 40px;
+  color: rgb(119, 119, 119);
+}
+
+.features .dad .child-two span a {
+  text-decoration-line: none;
+  text-transform: capitalize;
+  font-size: 25px;
+  font-weight: 700;
+  color: #009688;
+  border: solid #009688 3px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  transition: var(--main-transition);
+  position: relative;
+}
+
+.features .dad .child-two span a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #009688;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+
+.features .dad .child-two:hover a::before {
+  width: 100%;
+}
+
+.features .dad .child-two:hover a {
+  color: white;
+}
+
+.features .dad .child-three {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border: solid 1px #ccc;
+}
+
+.features .dad .child-three .img {
+  width: 100%;
+  position: relative;
+}
+
+.features .dad .child-three .img::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgb(3 169 244 / 60%);
+}
+
+.features .dad .child-three .img::before {
+  content: "";
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 125px 0px 225px 350px;
+  border-color: transparent transparent white transparent;
+  height: 0;
+  width: 0;
+  transition: var(--main-transition);
+  z-index: 2;
+}
+
+.features .dad .child-three:hover .img::before {
+  border-width: 125px 350px 225px 0px;
+}
+
+.features .dad .child-three .img img {
+  max-width: 100%;
+}
+
+.features .dad .child-three span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  gap: 30px;
+}
+
+.features .dad .child-three span h2 {
+  font-size: 40px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.features .dad .child-three span h2 hr {
+  width: 75%;
+  border: solid 3px #03a9f4;
+}
+
+.features .dad .child-three span p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 40px;
+  color: rgb(119, 119, 119);
+}
+
+.features .dad .child-three span a {
+  text-decoration-line: none;
+  text-transform: capitalize;
+  font-size: 25px;
+  font-weight: 700;
+  color: #03a9f4;
+  border: solid #03a9f4 3px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  transition: var(--main-transition);
+  position: relative;
+}
+
+.features .dad .child-three span a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #03a9f4;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+
+.features .dad .child-three:hover a::before {
+  width: 100%;
+}
+
+.features .dad .child-three:hover a {
+  color: white;
+}
 
 /* =========================================Features END================================================= */
